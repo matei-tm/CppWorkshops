@@ -17,5 +17,7 @@
 
 int Fibonacci::Calculate(int n)
 {
-	return n + 4;
+	if (n == 0 || n == 1) { return n; }
+
+	return Calculate(n - 1) + Calculate(n - 2);
 }

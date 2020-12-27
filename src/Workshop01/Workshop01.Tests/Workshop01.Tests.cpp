@@ -10,10 +10,26 @@ namespace Workshop01Tests
 	{
 	public:
 		
-		TEST_METHOD(TestClassInit)
+		TEST_METHOD(FibonacciForZero)
 		{
-			Fibonacci a;
-			int result = a.Calculate(4);
+			Fibonacci fibonacciInstance;
+			int result = fibonacciInstance.Calculate(0);
+
+			Assert::AreEqual(result, 0);
+		}
+
+		TEST_METHOD(FibonacciForOne)
+		{
+			Fibonacci fibonacciInstance;
+			int result = fibonacciInstance.Calculate(1);
+
+			Assert::AreEqual(result, 1);
+		}
+
+		TEST_METHOD(FibonacciForSix)
+		{
+			Fibonacci fibonacciInstance;
+			int result = fibonacciInstance.Calculate(6);
 
 			Assert::AreEqual(result, 8);
 		}
