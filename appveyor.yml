@@ -1,0 +1,7 @@
+version: 0.1.{build}
+image: Visual Studio 2019
+environment:
+  DeployExtension: false
+build_script:
+- ps: >-
+    .\src\build.ps1
