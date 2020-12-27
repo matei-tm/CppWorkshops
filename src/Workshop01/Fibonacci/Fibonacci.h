@@ -1,6 +1,6 @@
 #pragma once
 class Fibonacci
 {
-public:	int Calculate(int n);
+public:	int CalculateRecursive(int n);
 };
 

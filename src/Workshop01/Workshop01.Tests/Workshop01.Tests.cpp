@@ -9,11 +9,11 @@ namespace Workshop01Tests
 	TEST_CLASS(Workshop01Tests)
 	{
 	public:
-		
+
 		TEST_METHOD(FibonacciForZero)
 		{
 			Fibonacci fibonacciInstance;
-			int result = fibonacciInstance.Calculate(0);
+			int result = fibonacciInstance.CalculateRecursive(0);
 
 			Assert::AreEqual(result, 0);
 		}
@@ -21,7 +21,7 @@ namespace Workshop01Tests
 		TEST_METHOD(FibonacciForOne)
 		{
 			Fibonacci fibonacciInstance;
-			int result = fibonacciInstance.Calculate(1);
+			int result = fibonacciInstance.CalculateRecursive(1);
 
 			Assert::AreEqual(result, 1);
 		}
@@ -29,9 +29,35 @@ namespace Workshop01Tests
 		TEST_METHOD(FibonacciForSix)
 		{
 			Fibonacci fibonacciInstance;
-			int result = fibonacciInstance.Calculate(6);
+			int result = fibonacciInstance.CalculateRecursive(6);
 
 			Assert::AreEqual(result, 8);
+		}
+
+		TEST_METHOD(FibonacciForNegatives)
+		{
+
+			auto func = [] {
+				Fibonacci fibonacciInstance; 
+				fibonacciInstance.CalculateRecursive(-1); 
+			};
+
+			Assert::ExpectException<std::invalid_argument>(func);
+		}
+
+		TEST_METHOD(FibonacciForLarger)
+		{
+			int result = 0;
+			try
+			{
+
+				Fibonacci fibonacciInstance;
+				result = fibonacciInstance.CalculateRecursive(10);
+			}
+			catch (const std::exception&)
+			{
+				Assert::AreEqual(0, result);
+			}
 		}
 	};
 }
