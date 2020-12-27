@@ -34,6 +34,14 @@ namespace Workshop01Tests
 			Assert::AreEqual(result, 8);
 		}
 
+		TEST_METHOD(FibonacciForSeven)
+		{
+			Fibonacci fibonacciInstance;
+			int result = fibonacciInstance.CalculateRecursive(7);
+
+			Assert::AreEqual(result, 13);
+		}
+
 		TEST_METHOD(FibonacciRecursiveForNegatives)
 		{
 

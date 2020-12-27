@@ -10,3 +10,5 @@ test:
   assemblies:
     only:
       - '**\*.Tests.dll'
+test_script:
+  - vstest.console /logger:Appveyor C:\projects\cppworkshops\src\Workshop01\x64\Release\Workshop01.Tests.dll
