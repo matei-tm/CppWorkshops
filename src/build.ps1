@@ -1,6 +1,6 @@
 <#
 .Synopsis
-    Build the ssdtProjectHelper.sln
+    Build all the .sln files inside the repo
 .Parameter Configuration
     The build configuration to build.
 #>

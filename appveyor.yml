@@ -5,3 +5,8 @@ environment:
 build_script:
 - ps: >-
     .\src\build.ps1
+test:
+  # only assemblies to test
+  assemblies:
+    only:
+      - '**\*.Tests.dll'
