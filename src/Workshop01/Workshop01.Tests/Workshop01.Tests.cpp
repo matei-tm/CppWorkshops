@@ -34,7 +34,7 @@ namespace Workshop01Tests
 			Assert::AreEqual(result, 8);
 		}
 
-		TEST_METHOD(FibonacciForNegatives)
+		TEST_METHOD(FibonacciRecursiveForNegatives)
 		{
 
 			auto func = [] {
@@ -45,19 +45,14 @@ namespace Workshop01Tests
 			Assert::ExpectException<std::invalid_argument>(func);
 		}
 
-		TEST_METHOD(FibonacciForLarger)
+		TEST_METHOD(FibonacciRecursiveForLarger)
 		{
-			int result = 0;
-			try
-			{
-
+			auto func = [] {
 				Fibonacci fibonacciInstance;
-				result = fibonacciInstance.CalculateRecursive(10);
-			}
-			catch (const std::exception&)
-			{
-				Assert::AreEqual(0, result);
-			}
+				fibonacciInstance.CalculateRecursive(40);
+			};
+
+			Assert::ExpectException<std::invalid_argument>(func);
 		}
 	};
 }
