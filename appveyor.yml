@@ -1,7 +1,5 @@
 version: 0.1.{build}
 image: Visual Studio 2019
-environment:
-  DeployExtension: false
 build_script:
 - ps: >-
     .\src\build.ps1
@@ -11,4 +9,4 @@ test:
     only:
       - '**\*.Tests.dll'
 test_script:
-  - vstest.console /logger:Appveyor C:\projects\cppworkshops\src\Workshop01\x64\Release\Workshop01.Tests.dll
+  - vstest.console /logger:Appveyor .\src\Workshop01\x64\Release\Workshop01.Tests.dll
